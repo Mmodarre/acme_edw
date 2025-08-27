@@ -103,7 +103,7 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_DEV_HOST }}
       
       - name: Deploy to Development
-        run: databricks bundle deploy --target dev
+        run: databricks bundle deploy --target dev-ci-cd
         env:
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_DEV_TOKEN }}
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_DEV_HOST }}
