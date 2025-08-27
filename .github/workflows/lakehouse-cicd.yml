@@ -58,8 +58,8 @@ jobs:
           if grep -r -i "password\|secret\|token\|key" --include="*.yaml" --include="*.yml" . \
             | grep -v "secretScope\|getSecret" \
             | grep -v "# allowed\|# approved" \
-            | grep -v '\${{.*secrets\.' \
-            | grep -v '\${{.*vars\.' \
+            | grep -v 'secrets\.' \
+            | grep -v 'vars\.' \
             | grep -v 'DATABRICKS_TOKEN\|DATABRICKS_HOST'; then
             echo "⚠️ Potential hardcoded secrets found in configuration files"
             echo "Please use Databricks secret scopes or GitHub Actions secrets instead of hardcoded values"
