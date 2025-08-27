@@ -82,7 +82,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          python-version: '3.13'
       
       - name: Install LHP
         run: pip install lakehouse-plumber
@@ -97,7 +97,7 @@ jobs:
           find generated/ -name "*.py" | head -10
       
       - name: Validate Bundle Configuration
-        run: databricks bundle validate --target dev
+        run: databricks bundle validate --target dev-ci-cd
         env:
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_DEV_TOKEN }}
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_DEV_HOST }}
