@@ -1,3 +1,4 @@
 .lhp/
 .lhp_state.json
 generated/
+.cursor/rules/byterover-rules.mdc
